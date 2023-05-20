@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-size: cover;
+    background-color: rgb(240, 153, 40);
+    background-image: url('/background/png/BG.png');
+}
+
+.box {
+    position: absolute;
+    height: 150px;
+    /* background-image: url('../img/Jump__000.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    bottom: 100px;
+}
+#treeElm{
+    width: 600px;
+    height: 360px;
+    /* background-image:url('/background/png/Objects/Bush\ \(1\).png'); */
+    z-index: 2;
+    background-size: cover;
+    position: relative;
+    left: 100px;
+    top:300px;
+    
+
+}
+#cactus{
+    /* width: 108px;
+    height: 111px; */
+    background-size: cover;
+    position: relative;
+    left: 1000px;
+   
+    
+}
