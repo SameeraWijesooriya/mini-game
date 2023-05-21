@@ -3,7 +3,13 @@ boxElm.classList.add('box');
 document.body.append(boxElm);
 const treeElm=document.getElementById('treeElm');
 const cactusElm=document.getElementById('cactus');
-// treeElm.style.backgroundColor='red';
+const boxElm1=document.createElement('div');
+// const jumpSound=document.createElement('audio');
+// jumpSound.id('jumpSound');
+boxElm1.classList.add('box');
+boxElm1.id='zombi';
+document.body.append(boxElm1);
+boxElm1.style.width='100px'
 
 
 let jump = false;
@@ -15,15 +21,18 @@ let dx = 0;
 document.body.addEventListener('keydown', (eventData)=> {
     if (eventData.code === 'Space'){
         jump = true;
+        jumpAudio();
     }else if (eventData.code === 'ArrowRight'){
         boxElm.style.transform='rotateY(0)'
         run = true;
         dx = 2;
+        runAudio();
     }else if (eventData.code === 'ArrowLeft'){
         // boxElm.style.animationName='leftside';
         boxElm.style.transform='rotateY(180deg)'
         run = true;
         dx = -2;
+        runAudio();
     }
     else if (eventData.code==='ArrowUp'){
         attack=true;
@@ -80,6 +89,7 @@ let k=0;
 let l=1;
 let m=0;
 let n=0;
+let o=1;
 function drawIdle(){
     boxElm.style.backgroundImage = `url('img/Idle__00${i++}.png')`; 
     if(i === 10) i = 0;
@@ -96,6 +106,10 @@ function drawRun(){
 function drawAttack(){
     boxElm.style.backgroundImage=`url('img/Attack__00${n++}.png')`; 
     if(n===10) n=0;
+}
+function drawZombi(){
+    boxElm1.style.backgroundImage=`url('img/Walk__00${o++}.png')`; 
+    if(o===10) o=1;
 }
 // treeElm.style.backgroundImage=`url('background/png/Objects/Bush(${l++}).png')`; 
 function treeStyle(){
@@ -149,6 +163,22 @@ setInterval(()=> {
     
 });
 treeStyle();
+drawZombi();
 setInterval(()=> treeStyle(), (450));
+setInterval(()=> drawZombi(), (450));
+
+jumpAudio();
+
+/*sound functions */
+function jumpAudio(){
+    let audio=new Audio('/audio/cartoon-jump.mp3');
+    audio.play();
+
+}
+function runAudio(){
+    let audio=new Audio('/audio/run.mp3');
+    audio.play();
+
+}
 
 

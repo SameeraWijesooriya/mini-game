@@ -15,6 +15,7 @@ body {
     /* background-image: url('../img/Jump__000.png'); */
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 1;
     
     bottom: 100px;
 }
@@ -36,6 +37,31 @@ body {
     background-size: cover;
     position: relative;
     left: 1000px;
+    z-index: 0;
    
     
+}
+#zombi{
+    /* background-image: url(/img/Walk\ \(1\).png); */
+    animation-name: zombiRun;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes zombiRun{
+    0% {
+        left: 0;
+        transform: rotateY(0);
+    }
+    50% {
+        left: calc(100vw - 100px);
+        /* transform: rotateY(180deg); */
+    }
+    51% {
+        /* right: 0; */
+        /* transform: rotateY(180deg); */
+    }
+    100% {
+        left: 0;
+        transform: rotateY(180deg);
+    }
 }
