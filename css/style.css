@@ -5,7 +5,6 @@
 body {
     height: 100vh;
     background-size: cover;
-    background-color: rgb(240, 153, 40);
     background-image: url('/background/png/BG.png');
 }
 
@@ -64,4 +63,16 @@ body {
         left: 0;
         transform: rotateY(180deg);
     }
+}
+
+#bats{
+    width: 300px;
+    height: 300px;
+    background-image: url('/img/bat__000.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 6;
+    position: absolute;
+
+
 }

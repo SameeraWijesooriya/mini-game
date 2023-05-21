@@ -4,12 +4,15 @@ document.body.append(boxElm);
 const treeElm=document.getElementById('treeElm');
 const cactusElm=document.getElementById('cactus');
 const boxElm1=document.createElement('div');
-// const jumpSound=document.createElement('audio');
-// jumpSound.id('jumpSound');
+
 boxElm1.classList.add('box');
 boxElm1.id='zombi';
 document.body.append(boxElm1);
 boxElm1.style.width='100px'
+
+// const bats=document.createElement('div');
+// bats.id('bats');
+// document.body.append(bats);
 
 
 let jump = false;
@@ -180,5 +183,22 @@ function runAudio(){
     audio.play();
 
 }
+
+bats
+let bx = 0;
+let right = false;
+
+setInterval(()=>{
+    bats.style.left = `${bx}px`;
+    bx += !right ? 10 : -10;
+
+    if (bats.offsetLeft >= innerWidth){
+        right = true;
+        bats.style.top = `${Math.random() * 40}vh`;
+    }else if (bx + bats.offsetWidth <=0){
+        right =false;
+        bats.style.top = `${Math.random() * 40}vh`;
+    }
+},20);
 
 
