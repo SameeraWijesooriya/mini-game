@@ -1,3 +1,19 @@
+for(let i=0;i<10; i++){
+    const image=new Image();
+    image.src=`img/Idle__00${i}.png`
+}
+for(let i=0;i<10; i++){
+    const image=new Image();
+    image.src=`img/Run__00${i}.png`
+}
+for(let i=0;i<10; i++){
+    const image=new Image();
+    image.src=`img/Jump__00${i}.png`
+}
+for(let i=0;i<10; i++){
+    const image=new Image();
+    image.src=`img/Attack__00${i}.png`
+}
 const boxElm = document.createElement('div');
 boxElm.classList.add('box');
 document.body.append(boxElm);
@@ -121,20 +137,24 @@ function treeStyle(){
 
     
     if(l===3) l=1;
-    if(m==1){cactusElm.style.width='70px';
-    cactusElm.style.height='45px';
-    cactusElm.style.top='100px'
+    if(m===0){
     
     } 
-    else if(m==2){cactusElm.style.width='108px';
+    else if(m===1){cactusElm.style.width='70px';
+    cactusElm.style.height='45px';
+    cactusElm.style.top='100px';
+    
+
+    } 
+    else if(m===2){cactusElm.style.width='108px';
     cactusElm.style.height='111px';
     cactusElm.style.top='50px';
+    
     } 
-    else if(m==3){cactusElm.style.width='86px';
-    cactusElm.style.height='96px';
-    cactusElm.style.top='50px';
-    } 
-    else if(m===4) m=0;
+    else if(m===3){m=0
+        cactusElm.style.width='86px';
+        cactusElm.style.height='96px';
+        cactusElm.style.top='50px'};
 }
 
 setInterval(()=> {
