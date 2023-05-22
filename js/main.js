@@ -46,12 +46,14 @@ document.body.addEventListener('keydown', (eventData)=> {
         run = true;
         dx = 2;
         runAudio();
+     
     }else if (eventData.code === 'ArrowLeft'){
         // boxElm.style.animationName='leftside';
         boxElm.style.transform='rotateY(180deg)'
         run = true;
         dx = -2;
         runAudio();
+    
     }
     else if (eventData.code==='ArrowUp'){
         attack=true;
