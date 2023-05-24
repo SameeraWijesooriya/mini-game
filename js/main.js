@@ -196,12 +196,12 @@ jumpAudio();
 
 /*sound functions */
 function jumpAudio(){
-    let audio=new Audio('/audio/cartoon-jump.mp3');
+    let audio=new Audio('audio/cartoon-jump.mp3');
     audio.play();
 
 }
 function runAudio(){
-    let audio=new Audio('/audio/run.mp3');
+    let audio=new Audio('audio/run.mp3');
     audio.play();
 
 }
