@@ -36,7 +36,7 @@ body {
     background-size: cover;
     position: relative;
     left: 1000px;
-    z-index: 0;
+    z-index: 1;
    
     
 }
@@ -45,6 +45,7 @@ body {
     animation-name: zombiRun;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    z-index: 1;
 }
 @keyframes zombiRun{
     0% {
