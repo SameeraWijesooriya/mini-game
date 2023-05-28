@@ -1,3 +1,4 @@
+document.body.style.backgroundImage=`url('img/bg2.png')`
 for(let i=0;i<10; i++){
     const image=new Image();
     image.src=`img/Idle__00${i}.png`
@@ -14,6 +15,8 @@ for(let i=0;i<10; i++){
     const image=new Image();
     image.src=`img/Attack__00${i}.png`
 }
+
+
 const boxElm = document.createElement('div');
 boxElm.classList.add('box');
 document.body.append(boxElm);
@@ -215,16 +218,21 @@ let right = false;
 
 setInterval(()=>{
     bats.style.left = `${bx}px`;
-    bx += !right ? 10 : -10;
+    bx += !right ? 10 : -5;
 
     if (bats.offsetLeft >= innerWidth){
         right = true;
-        bats.style.top = `${Math.random() * 40}vh`;
+        bats.style.top = `${Math.random() * 10}vh`;
     }
     else if (bx + bats.offsetWidth <=0){
         right =false;
-        bats.style.top = `${Math.random() * 40}vh`;
+        bats.style.top = `${Math.random() * 10}vh`;
     }
 },20);
+
+boxElm.addEventListener(eventData,()=>{
+    eventData.getBoundingClientRect()
+    console.log(x.left,x.top)
+})
 
 
