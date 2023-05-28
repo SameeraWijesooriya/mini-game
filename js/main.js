@@ -20,11 +20,16 @@ document.body.append(boxElm);
 const treeElm=document.getElementById('treeElm');
 const cactusElm=document.getElementById('cactus');
 const boxElm1=document.createElement('div');
-
 boxElm1.classList.add('box');
 boxElm1.id='zombi';
 document.body.append(boxElm1);
 boxElm1.style.width='100px'
+
+const boxElm3=document.createElement('div');
+boxElm3.classList.add('box');
+boxElm3.id='zombi2';
+document.body.append(boxElm3);
+boxElm3.style.width='100px'
 
 // const bats=document.createElement('div');
 // bats.id('bats');
@@ -131,6 +136,8 @@ function drawAttack(){
 function drawZombi(){
     boxElm1.style.backgroundImage=`url('img/Walk__00${o++}.png')`; 
     if(o===10) o=1;
+    boxElm3.style.backgroundImage=`url('img/Walk__00${o++}.png')`; 
+    if(o===10) o=1;
 }
 // treeElm.style.backgroundImage=`url('background/png/Objects/Bush(${l++}).png')`; 
 function treeStyle(){
@@ -200,11 +207,7 @@ function jumpAudio(){
     audio.play();
 
 }
-function runAudio(){
-    let audio=new Audio('audio/run.mp3');
-    audio.play();
 
-}
 
 bats
 let bx = 0;
@@ -217,7 +220,8 @@ setInterval(()=>{
     if (bats.offsetLeft >= innerWidth){
         right = true;
         bats.style.top = `${Math.random() * 40}vh`;
-    }else if (bx + bats.offsetWidth <=0){
+    }
+    else if (bx + bats.offsetWidth <=0){
         right =false;
         bats.style.top = `${Math.random() * 40}vh`;
     }
