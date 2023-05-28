@@ -6,6 +6,7 @@ body {
     height: 100vh;
     width: 100%;
     background-size: cover;
+    position:absolute;
     /* background-image: url('/img/bg2.png'); */
 
 }
@@ -21,14 +22,14 @@ body {
     bottom: 100px;
 }
 #treeElm{
-    width: 600px;
-    height: 360px;
+    width: 300px;
+    height: 180px;
     /* background-image:url('/background/png/Objects/Bush\ \(1\).png'); */
-    z-index: 2;
+    z-index: 0;
     background-size: cover;
-    position: relative;
+    position: absolute;
     left: 100px;
-    top:300px;
+    top:290px;
     
 
 }
@@ -36,14 +37,13 @@ body {
     /* width: 108px;
     height: 111px; */
     background-size: cover;
-    position: relative;
+    position: absolute;
     left: 1000px;
     z-index: 1;
    
     
 }
 #zombi{
-    /* background-image: url(/img/Walk\ \(1\).png); */
     animation-name: zombiRun;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -55,18 +55,13 @@ body {
         transform: rotateY(0);
     }
     100% {
-        left: 100%;
+        left:92%;
         
     }
-    /* 51%{
-        transform:translateY(180deg)
-
-    } */
-        
-   
+    
 }
+
 #zombi2{
-    /* background-image: url(/img/Walk\ \(1\).png); */
     animation-name: zombi2Run;
     animation-duration: 8s;
     animation-iteration-count: infinite;
@@ -78,7 +73,7 @@ body {
         right:0;
     }
     100% {
-        right: 100%;
+        right: 92%;
         
     }
 }
@@ -91,6 +86,48 @@ body {
     background-repeat: no-repeat;
     z-index: 6;
     position: absolute;
+    animation-name: batFly;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes batFly{
+    0%{
+        left: 0;
+
+    }
+    50%{
+        left: 75%;
+
+    }
+    51%{
+        transform: translateY(180deg);
+        
+    }
+    100%{
+        left: 0;
+
+    }
+}
+#scoreBar{
+    padding: 20px;
+    position: absolute;
+}
+#scoreBord{
+    width: 250px;
+    height: 50px;
+    color: rgb(240, 209, 74);
+    background-color: rgba(157, 172, 172, 0.507);
+    border-radius: 10px;
+    border: 2px solid rgb(142, 196, 129);
+    position:absolute;
+    display:flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 32px;
+    font-family: 'Bungee Outline', cursive;
+    font-weight: bold;
 
 
+    
 }

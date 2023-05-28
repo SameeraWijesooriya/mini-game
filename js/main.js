@@ -32,7 +32,20 @@ const boxElm3=document.createElement('div');
 boxElm3.classList.add('box');
 boxElm3.id='zombi2';
 document.body.append(boxElm3);
-boxElm3.style.width='100px'
+boxElm3.style.width='100px';
+
+const scoreElm=document.getElementById('score')
+scoreElm.innerText='0';
+
+
+let score=0;
+
+function scoreCount(){
+     score+=1;
+     return score;
+}
+
+
 
 // const bats=document.createElement('div');
 // bats.id('bats');
@@ -48,6 +61,8 @@ let dx = 0;
 document.body.addEventListener('keydown', (eventData)=> {
     if (eventData.code === 'Space'){
         jump = true;
+        const point=scoreCount();
+        scoreElm.innerText=point;
         jumpAudio();
     }else if (eventData.code === 'ArrowRight'){
         boxElm.style.transform='rotateY(0)'
@@ -154,19 +169,19 @@ function treeStyle(){
     } 
     else if(m===1){cactusElm.style.width='70px';
     cactusElm.style.height='45px';
-    cactusElm.style.top='100px';
+    cactusElm.style.top='400px';
     
 
     } 
     else if(m===2){cactusElm.style.width='108px';
     cactusElm.style.height='111px';
-    cactusElm.style.top='50px';
+    cactusElm.style.top='350px';
     
     } 
     else if(m===3){m=0
         cactusElm.style.width='86px';
         cactusElm.style.height='96px';
-        cactusElm.style.top='50px'};
+        cactusElm.style.top='350px'};
 }
 
 setInterval(()=> {
@@ -212,27 +227,6 @@ function jumpAudio(){
 }
 
 
-bats
-let bx = 0;
-let right = false;
 
-setInterval(()=>{
-    bats.style.left = `${bx}px`;
-    bx += !right ? 10 : -5;
-
-    if (bats.offsetLeft >= innerWidth){
-        right = true;
-        bats.style.top = `${Math.random() * 10}vh`;
-    }
-    else if (bx + bats.offsetWidth <=0){
-        right =false;
-        bats.style.top = `${Math.random() * 10}vh`;
-    }
-},20);
-
-boxElm.addEventListener(eventData,()=>{
-    eventData.getBoundingClientRect()
-    console.log(x.left,x.top)
-})
 
 
