@@ -37,6 +37,8 @@ boxElm3.style.width='100px';
 const scoreElm=document.getElementById('score')
 scoreElm.innerText='0';
 
+const gameOverSec=document.getElementById('game-over-pannal')
+
 
 let score=0;
 
@@ -63,7 +65,13 @@ document.body.addEventListener('keydown', (eventData)=> {
         jump = true;
         const point=scoreCount();
         scoreElm.innerText=point;
+        console.log(point)
+        
         jumpAudio();
+        if(+point>=10){
+            gameOver()
+
+        }
     }else if (eventData.code === 'ArrowRight'){
         boxElm.style.transform='rotateY(0)'
         run = true;
@@ -225,6 +233,12 @@ function jumpAudio(){
     audio.play();
 
 }
+gameOverSec.style.visibility="hidden";
+
+function gameOver() {
+    gameOverSec.style.visibility="visible"
+      
+  }
 
 
 

@@ -20,6 +20,7 @@ body {
     z-index: 1;
     
     bottom: 100px;
+
 }
 #treeElm{
     width: 300px;
@@ -46,6 +47,7 @@ body {
 #zombi{
     animation-name: zombiRun;
     animation-duration: 10s;
+    /* background-color: red; */
     animation-iteration-count: infinite;
     z-index: 1;
 }
@@ -128,6 +130,44 @@ body {
     font-family: 'Bungee Outline', cursive;
     font-weight: bold;
 
+
+    
+}
+
+
+#game-over-pannal{
+    height: 90%;
+    width: 50%;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 350px;
+   
+
+}
+#game-over{
+
+    background-image: url('/img/gameOver2.png');
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    z-index: 201;
+   
+}
+#final-marks{
+    width: 80%;
+    height: 80px;
+    border-radius: 10px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+36,752201+58,bf6e4e+100 */
+    background: #f0b7a1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 36%, #752201 58%, #bf6e4e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 36%,#752201 58%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f0b7a1 0%,#8c3310 36%,#752201 58%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */
+    z-index: 201;
+    padding-left: 300px;
 
     
 }
