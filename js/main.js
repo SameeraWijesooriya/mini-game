@@ -304,6 +304,12 @@ function gameWin() {
       
   }
 
+function restart() {
+    location.reload();
+}    
+
+
+
 
 
 
