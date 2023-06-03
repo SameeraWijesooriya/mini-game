@@ -18,6 +18,7 @@ for(let i=0;i<10; i++){
 
 
 const boxElm = document.createElement('div');
+boxElm.id='ninja';
 boxElm.classList.add('box');
 document.body.append(boxElm);
 const treeElm=document.getElementById('treeElm');
@@ -36,8 +37,17 @@ boxElm3.style.width='100px';
 
 const scoreElm=document.getElementById('score')
 scoreElm.innerText='0';
+const scoreElm1=document.getElementById('score1')
+scoreElm.innerText='0';
+const scoreElm2=document.getElementById('score2')
+scoreElm.innerText='0';
 
-const gameOverSec=document.getElementById('game-over-pannal')
+const gameOverSec=document.getElementById('game-over-pannal');
+const gameWinSec=document.getElementById('game-win');
+
+// const reStart=document.getElementById("btn-play-agin");
+// reStart.alert("helloo!")
+
 
 
 let score=0;
@@ -46,6 +56,8 @@ function scoreCount(){
      score+=1;
      return score;
 }
+
+
 
 
 
@@ -65,25 +77,27 @@ document.body.addEventListener('keydown', (eventData)=> {
         jump = true;
         const point=scoreCount();
         scoreElm.innerText=point;
-        console.log(point)
+
         
         jumpAudio();
         if(+point>=10){
-            gameOver()
+           gameWin()
+           scoreElm2.innerText=point;
+
 
         }
     }else if (eventData.code === 'ArrowRight'){
         boxElm.style.transform='rotateY(0)'
         run = true;
         dx = 2;
-        runAudio();
+        // runAudio();
      
     }else if (eventData.code === 'ArrowLeft'){
         // boxElm.style.animationName='leftside';
         boxElm.style.transform='rotateY(180deg)'
         run = true;
         dx = -2;
-        runAudio();
+        // runAudio();
     
     }
     else if (eventData.code==='ArrowUp'){
@@ -112,7 +126,7 @@ function doJump(){
     drawJump();
    
     let y  = Math.cos(angle * (Math.PI / 180));
-    y *= 3;
+    y *= 2;
     boxElm.style.top = (boxElm.offsetTop - y) + "px";
     angle++;
     if (angle >  180){
@@ -125,11 +139,45 @@ function doJump(){
 }
 
 function doRun(){
-    let x = boxElm.offsetLeft + dx;
-    if ((x + boxElm.offsetWidth)> innerWidth) {
-        x = innerWidth - boxElm.offsetWidth;
-    }else if (x <= 0) x = 0;
-    boxElm.style.left = `${x}px`;
+    let z = boxElm.offsetLeft + dx;
+    if ((z + boxElm.offsetWidth)> innerWidth) {
+        z = innerWidth - boxElm.offsetWidth;
+    }else if (z <= 0) z = 0;
+    boxElm.style.left = `${z}px`;
+    const r1 = boxElm.offsetWidth / 2;
+    const r2 = boxElm1.offsetWidth / 2;
+    const r3=boxElm3.offsetWidth/2;
+    console.log(r1);
+    const a1=boxElm.offsetHeight/2;
+    const a2=boxElm1.offsetHeight/2;
+    const a3=boxElm3.offsetHeight/2;
+    console.log(a1);
+    const d1=Math.abs((boxElm1.offsetLeft + r2) - (boxElm.offsetLeft + r1));
+    console.log(d1);
+    const d2=Math.abs((boxElm3.offsetLeft + r3) - (boxElm.offsetLeft + r1));
+    // const h1=Math.abs((boxElm1.offsetTop+a2)-(boxElm.offsetTop+a1));
+    // const h2=Math.abs((boxElm3.offsetTop+a3)-(boxElm.offsetTop+a1));
+    // const distanceZombi1=Math.sqrt(Math.pow(d1)+Math.pow(h1));
+    // const distanceZombi2=Math.sqrt(Math.pow(d2)+Math.pow(h2));
+    
+    
+ 
+    if (Math.abs((boxElm1.offsetLeft + r2) - (boxElm.offsetLeft + r1)) <= (r1 + r2)){
+        alert("Collision");
+        drawDead()
+    } 
+    if (Math.abs((boxElm3.offsetLeft + r3) - (boxElm.offsetLeft + r1)) <= (r1 + r3)) {
+        alert("Collision-zombi2")
+        drawDead()
+    };
+    // if (distanceZombi1 <= (r1 + r2)){
+    //     alert("Collision");
+    // } 
+    // if (distanceZombi2 <= (r1 + r3)) {
+    //     alert("Collision-zombi2")
+    // };
+    
+    // elmActivity();
 }
 function doAttack(){
     drawAttack();
@@ -142,6 +190,7 @@ let l=1;
 let m=0;
 let n=0;
 let o=1;
+let f=0;
 function drawIdle(){
     boxElm.style.backgroundImage = `url('img/Idle__00${i++}.png')`; 
     if(i === 10) i = 0;
@@ -154,6 +203,10 @@ function drawJump(){
 function drawRun(){
     boxElm.style.backgroundImage=`url('img/Run__00${k++}.png')`; 
     if(k===10) k=0;
+}
+function drawDead(){
+    boxElm.style.backgroundImage=`url('img/Dead__00${f++}.png')`; 
+    if(f===10) f=0;
 }
 function drawAttack(){
     boxElm.style.backgroundImage=`url('img/Attack__00${n++}.png')`; 
@@ -219,6 +272,12 @@ setInterval(()=> {
 
     }else if(attack==true) drawAttack(),(100);
     
+    else if(run==false && jump===false && attack===false ){
+        drawDead(), (1000/20);
+        boxElm.style.width='75px';
+
+    }
+    
 });
 treeStyle();
 drawZombi();
@@ -230,17 +289,35 @@ jumpAudio();
 /*sound functions */
 function jumpAudio(){
     let audio=new Audio('audio/cartoon-jump.mp3');
-    audio.play();
+    //audio.play();
 
 }
+gameWinSec.style.visibility="hidden";
 gameOverSec.style.visibility="hidden";
 
 function gameOver() {
     gameOverSec.style.visibility="visible"
       
   }
+function gameWin() {
+    gameWinSec.style.visibility="visible"
+      
+  }
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
+  
 
 
 

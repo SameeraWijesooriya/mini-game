@@ -35,8 +35,6 @@ body {
 
 }
 #cactus{
-    /* width: 108px;
-    height: 111px; */
     background-size: cover;
     position: absolute;
     left: 1000px;
@@ -115,7 +113,7 @@ body {
     padding: 20px;
     position: absolute;
 }
-#scoreBord{
+#score-bord{
     width: 250px;
     height: 50px;
     color: rgb(240, 209, 74);
@@ -135,7 +133,7 @@ body {
 }
 
 
-#game-over-pannal{
+#game-over-pannal,#game-win{
     height: 90%;
     width: 50%;
     z-index: 200;
@@ -146,9 +144,20 @@ body {
    
 
 }
-#game-over{
 
+#game-over{
     background-image: url('/img/gameOver2.png');
+    background-size: cover;
+
+    padding-left: 50px;
+}
+#game-win{
+    background-image: url('/img/win.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+.final-img{   
     background-repeat: no-repeat;
     width: 90%;
     height: 90%;
@@ -156,8 +165,9 @@ body {
     z-index: 201;
    
 }
-#final-marks{
-    width: 80%;
+
+.marks{
+    width: 100%;
     height: 80px;
     border-radius: 10px;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+36,752201+58,bf6e4e+100 */
@@ -170,4 +180,27 @@ body {
     padding-left: 300px;
 
     
+}
+#game-over-marks{
+    width: 550px;
+}
+#final-marks,#game-over-marks{
+    font-size: 27px;
+    font-family: 'Bungee Outline', cursive;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   top: 10px;
+   
+  
+
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: yellow;
+    border: 1px solid burlywood;
 }

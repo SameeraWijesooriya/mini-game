@@ -11,25 +11,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/Attack__003.png">
+    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
     <script defer src="js/main.js"></script>
+    <!-- <script defer src="js/activity.js"></script> -->
 
 
 </head>
 <body>
     <div id="scoreBar">
-        <div id="scoreBord">Score :<label id="score"></label></div>
+        <div id="score-bord">Score :<label id="score"></label></div>
     </div>
     
     <div id="bats"></div>
     <div id="treeElm"></div>
     <div id="cactus"></div>
     <div id="game-over-pannal">
-        <div id="game-over"></div>
-        <div id="final-marks"></div>
+        <div id="game-over" class="final-img"></div>
+        <div id="game-over-marks" class="marks">
+            <div id="scoreBord-loss">Your Score :<label id="score1"></label></div>
+            <button id="btn-re-try">re-try</button>
+        </div>
+    </div>
+    <div id="game-win">
+        <div id="game-win-img" class="final-img"></div>
+        <div id="final-marks" class="marks">
+            <div id="scoreBord-win">Your Score :<label id="score2"></label></div>
+            <button  id="btn-play-agin">play-agin</button>
+        </div>
     </div>
     
-    <audio src="/audio/theme-song.mp3" autoplay></audio>
+    <!-- <audio src="/audio/theme-song.mp3" autoplay></audio> -->
 
 
-</body>
+</body>  
 </html>
