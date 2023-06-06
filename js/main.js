@@ -69,6 +69,7 @@ function scoreCount(){
 let jump = false;
 let run = false;
 let attack=false;
+let dead=false;
 let dx = 0;
 
 
@@ -126,7 +127,7 @@ function doJump(){
     drawJump();
    
     let y  = Math.cos(angle * (Math.PI / 180));
-    y *= 2;
+    y *= 4;
     boxElm.style.top = (boxElm.offsetTop - y) + "px";
     angle++;
     if (angle >  180){
@@ -147,41 +148,44 @@ function doRun(){
     const r1 = boxElm.offsetWidth / 2;
     const r2 = boxElm1.offsetWidth / 2;
     const r3=boxElm3.offsetWidth/2;
-    console.log(r1);
+    // console.log(r1);
     const a1=boxElm.offsetHeight/2;
     const a2=boxElm1.offsetHeight/2;
     const a3=boxElm3.offsetHeight/2;
-    console.log(a1);
+    // console.log(a1);
     const d1=Math.abs((boxElm1.offsetLeft + r2) - (boxElm.offsetLeft + r1));
-    console.log(d1);
     const d2=Math.abs((boxElm3.offsetLeft + r3) - (boxElm.offsetLeft + r1));
-    // const h1=Math.abs((boxElm1.offsetTop+a2)-(boxElm.offsetTop+a1));
-    // const h2=Math.abs((boxElm3.offsetTop+a3)-(boxElm.offsetTop+a1));
-    // const distanceZombi1=Math.sqrt(Math.pow(d1)+Math.pow(h1));
-    // const distanceZombi2=Math.sqrt(Math.pow(d2)+Math.pow(h2));
-    
-    
- 
-    if (Math.abs((boxElm1.offsetLeft + r2) - (boxElm.offsetLeft + r1)) <= (r1 + r2)){
-        alert("Collision");
-        drawDead()
-    } 
-    if (Math.abs((boxElm3.offsetLeft + r3) - (boxElm.offsetLeft + r1)) <= (r1 + r3)) {
-        alert("Collision-zombi2")
-        drawDead()
-    };
-    // if (distanceZombi1 <= (r1 + r2)){
-    //     alert("Collision");
-    // } 
-    // if (distanceZombi2 <= (r1 + r3)) {
-    //     alert("Collision-zombi2")
-    // };
-    
-    // elmActivity();
+    const h1=Math.abs((boxElm1.offsetTop+a2)-(boxElm.offsetTop+a1));
+    const h2=Math.abs((boxElm3.offsetTop+a3)-(boxElm.offsetTop+a1));
+    const zombi1Length=Math.hypot(d1,h1);
+    const zombi2Length=Math.hypot(d2,h2);
+
+    if(zombi1Length<=10){
+        alert("tuch zombi 1")
+        jump=false;
+        run=false
+        attack=false
+        dead=true;
+        doDead()
+    }
+    if(zombi2Length<=10){
+        jump=false;
+        run=false
+        attack=false
+        dead=true;
+        alert("tuch zombi 2")
+       
+        doDead()
+    }
+   
 }
 function doAttack(){
     drawAttack();
 }
+function doDead(){
+    drawDead();
+}
+
 
 let i = 0;
 let j = 0;
@@ -254,6 +258,7 @@ setInterval(()=> {
     }if(attack){
         doAttack();
     }
+   
 }, 5);
 
 setInterval(()=> {
@@ -272,7 +277,7 @@ setInterval(()=> {
 
     }else if(attack==true) drawAttack(),(100);
     
-    else if(run==false && jump===false && attack===false ){
+    else if(dead==true  ){
         drawDead(), (1000/20);
         boxElm.style.width='75px';
 

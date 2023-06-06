@@ -12,6 +12,7 @@ body {
 }
 
 .box {
+    
     position: absolute;
     height: 150px;
     /* background-image: url('../img/Jump__000.png'); */
@@ -44,7 +45,7 @@ body {
 }
 #zombi{
     animation-name: zombiRun;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     z-index: 1;
 }
@@ -62,7 +63,7 @@ body {
 
 #zombi2{
     animation-name: zombi2Run;
-    animation-duration: 8s;
+    animation-duration: 25s;
     animation-iteration-count: infinite;
     z-index: 1;
     transform: rotateY(180deg);
