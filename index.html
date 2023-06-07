@@ -18,9 +18,27 @@
 
 </head>
 <body>
-    <div id="scoreBar">
-        <div id="score-bord">Score :<label id="score"></label></div>
+    <div id="header">
+        <div id="scoreBar">
+            <div id="score-bord">Score :<label id="score"></label></div>
+        </div>
+        <div id="timeBar">
+            <div id="time-bord">Time :
+                <span class="digit" id="hr">
+                    00</span>
+                <span class="txt">Hr.</span>
+                <span class="digit" id="min">
+                    00</span>
+                <span class="txt">Min.</span>
+                <span class="digit" id="sec">
+                    00</span>
+                <span class="txt">Sec.</span>
+                <span class="digit" id="count">
+                    00</span>
+            </div>
+        </div>
     </div>
+   
     
     <div id="bats"></div>
     <div id="treeElm"></div>
@@ -29,7 +47,7 @@
         <div id="game-over" class="final-img"></div>
         <div id="game-over-marks" class="marks">
             <div id="scoreBord-loss">Your Score :<label id="score1"></label></div>
-            <button id="btn-re-try">re-try</button>
+            <button id="btn-re-try" onclick="restart()">re-try</button>
         </div>
     </div>
     <div id="game-win">

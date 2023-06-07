@@ -81,9 +81,10 @@ document.body.addEventListener('keydown', (eventData)=> {
 
         
         jumpAudio();
-        if(+point>=10){
+        if(+point>=100){
            gameWin()
            scoreElm2.innerText=point;
+           boxElm.style.visibility="hidden";
 
 
         }
@@ -167,6 +168,8 @@ function doRun(){
         attack=false
         dead=true;
         doDead()
+        gameOver()
+        boxElm.style.visibility="hidden";
     }
     if(zombi2Length<=10){
         jump=false;
@@ -176,6 +179,8 @@ function doRun(){
         alert("tuch zombi 2")
        
         doDead()
+        gameOver()
+        boxElm.style.visibility="hidden";
     }
    
 }

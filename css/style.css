@@ -109,18 +109,28 @@ body {
 
     }
 }
-#scoreBar{
-    padding: 20px;
-    position: absolute;
+#header{
+    position:absolute;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    justify-content:space-around;
+
 }
-#score-bord{
+#scoreBar,#timeBar{
+    padding-top: 10px;
+  
+    
+}
+#score-bord,#time-bord{
     width: 250px;
     height: 50px;
     color: rgb(240, 209, 74);
     background-color: rgba(157, 172, 172, 0.507);
     border-radius: 10px;
     border: 2px solid rgb(142, 196, 129);
-    position:absolute;
     display:flex;
     align-items: center;
     padding-left: 20px;
