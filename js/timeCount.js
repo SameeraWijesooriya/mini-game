@@ -1,20 +1,21 @@
-let startBtn = document.getElementById('start');
-let stopBtn = document.getElementById('stop');
-let resetBtn = document.getElementById('reset');
 
 let hour = 00;
 let minute = 00;
 let second = 00;
 let count = 00;
+timer=true;
+const resetBtn=document.getElementById('btn-re-try');
+stopWatch();
 
-startBtn.addEventListener('click', function () {
-	timer = true;
-	stopWatch();
-});
 
-stopBtn.addEventListener('click', function () {
-	timer = false;
-});
+// startBtn.addEventListener('click', function () {
+// 	timer = true;
+// 	stopWatch();
+// });
+
+// stopBtn.addEventListener('click', function () {
+// 	timer = false;
+// });
 
 resetBtn.addEventListener('click', function () {
 	timer = false;
@@ -69,7 +70,6 @@ function stopWatch() {
 			countString = "0" + countString;
 		}
 
-		document.getElementById('hr').innerHTML = hrString;
 		document.getElementById('min').innerHTML = minString;
 		document.getElementById('sec').innerHTML = secString;
 		document.getElementById('count').innerHTML = countString;

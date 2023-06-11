@@ -167,6 +167,7 @@ function doRun(){
         run=false
         attack=false
         dead=true;
+        timer = false;
         doDead()
         gameOver()
         boxElm.style.visibility="hidden";
