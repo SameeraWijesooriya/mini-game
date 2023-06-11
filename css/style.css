@@ -115,7 +115,6 @@ body {
     height: 60px;
     display: flex;
     flex-direction: row;
-    background-color: aqua;
     justify-content:space-around;
 
 }
@@ -227,6 +226,8 @@ button{
     
 }
 #time-bord{
-    font-size: 20px !important;
-    color: chartreuse;
+    font-size: 30px !important;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(145, 255, 0);
+    
 }

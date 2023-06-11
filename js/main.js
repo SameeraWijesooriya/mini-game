@@ -51,10 +51,13 @@ const gameWinSec=document.getElementById('game-win');
 
 
 let score=0;
+let countPoint=true;
 
 function scoreCount(){
-     score+=1;
-     return score;
+    if(countPoint){
+        score+=1;
+        return score;
+    }else return "??";
 }
 
 
@@ -70,7 +73,11 @@ let jump = false;
 let run = false;
 let attack=false;
 let dead=false;
+timer = true;
 let dx = 0;
+const lblMin=document.getElementById('min');
+const lblSec=document.getElementById('sec');
+		
 
 
 document.body.addEventListener('keydown', (eventData)=> {
@@ -81,9 +88,11 @@ document.body.addEventListener('keydown', (eventData)=> {
 
         
         jumpAudio();
-        if(+point>=100){
+        if(+point>=10){
+            timer=false;
+            countPoint=false;
            gameWin()
-           scoreElm2.innerText=point;
+           scoreElm2.innerText=point +" ..............***********..........."+"Time : "+lblSec.innerText;
            boxElm.style.visibility="hidden";
 
 
@@ -170,6 +179,8 @@ function doRun(){
         timer = false;
         doDead()
         gameOver()
+        scoreCount=false;
+        scoreElm1.innerText=point +" ..............***********..........."+"Time : "+lblSec.innerText;
         boxElm.style.visibility="hidden";
     }
     if(zombi2Length<=10){
@@ -178,9 +189,11 @@ function doRun(){
         attack=false
         dead=true;
         alert("tuch zombi 2")
-       
+        timer = false;
         doDead()
         gameOver()
+        scoreCount=false;
+        scoreElm1.innerText=point +" ..............***********..........."+"Time : "+lblSec.innerText;
         boxElm.style.visibility="hidden";
     }
    

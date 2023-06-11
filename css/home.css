@@ -1,7 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(/img/BG.png);
+}
 button{
-    width: 300px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 620px;
     height: 60px;
     border-radius: 15px;
+    z-index: 3;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+16,8c3381+54,db36a4+87 */
     background: #cb60b3; /* Old browsers */
     background: -moz-linear-gradient(top,  #cb60b3 0%, #c146a1 16%, #8c3381 54%, #db36a4 87%); /* FF3.6-15 */
@@ -9,4 +17,11 @@ button{
     background: linear-gradient(to bottom,  #cb60b3 0%,#c146a1 16%,#8c3381 54%,#db36a4 87%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0 ); /* IE6-9 */
 
+}
+#start-view{
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    top: 60%;
+    left: 15%;
 }

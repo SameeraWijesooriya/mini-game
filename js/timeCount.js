@@ -3,7 +3,6 @@ let hour = 00;
 let minute = 00;
 let second = 00;
 let count = 00;
-timer=true;
 const resetBtn=document.getElementById('btn-re-try');
 stopWatch();
 
