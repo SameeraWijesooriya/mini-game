@@ -222,7 +222,7 @@ button{
 }
 #scoreBord-win{
     font-family: 'Times New Roman', Times, serif;    
-    background-color: aqua;
+   
     
 }
 #time-bord{
@@ -230,4 +230,10 @@ button{
     font-family: 'Times New Roman', Times, serif;
     color: rgb(145, 255, 0);
     
+}
+.btnGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 10000;
 }

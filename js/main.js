@@ -38,9 +38,9 @@ boxElm3.style.width='100px';
 const scoreElm=document.getElementById('score')
 scoreElm.innerText='0';
 const scoreElm1=document.getElementById('score1')
-scoreElm.innerText='0';
+scoreElm1.innerText='0';
 const scoreElm2=document.getElementById('score2')
-scoreElm.innerText='0';
+scoreElm2.innerText='0';
 
 const gameOverSec=document.getElementById('game-over-pannal');
 const gameWinSec=document.getElementById('game-win');
@@ -88,7 +88,7 @@ document.body.addEventListener('keydown', (eventData)=> {
 
         
         jumpAudio();
-        if(+point>=10){
+        if(+point>=100){
             timer=false;
             countPoint=false;
            gameWin()
