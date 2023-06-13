@@ -234,6 +234,6 @@ button{
 .btnGroup{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-evenly;
     z-index: 10000;
 }

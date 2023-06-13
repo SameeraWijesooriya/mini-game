@@ -313,7 +313,7 @@ jumpAudio();
 /*sound functions */
 function jumpAudio(){
     let audio=new Audio('audio/cartoon-jump.mp3');
-    //audio.play();
+    audio.play();
 
 }
 gameWinSec.style.visibility="hidden";

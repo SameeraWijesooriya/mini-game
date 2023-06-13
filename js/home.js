@@ -1,4 +1,3 @@
 function exit() {
     window.close()
-   
 }
