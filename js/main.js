@@ -171,7 +171,7 @@ function doRun(){
     const zombi2Length=Math.hypot(d2,h2);
 
     if(zombi1Length<=10){
-        alert("tuch zombi 1")
+        alert("touch zombi 1")
         jump=false;
         run=false
         attack=false
@@ -188,7 +188,7 @@ function doRun(){
         run=false
         attack=false
         dead=true;
-        alert("tuch zombi 2")
+        alert("touch zombi 2")
         timer = false;
         doDead()
         gameOver()
