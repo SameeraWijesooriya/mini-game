@@ -1,5 +1,5 @@
-#minigame
-#Only HTML,CSS,JS 
+# minigame
+## Only HTML,CSS,JS 
 
 
 #Start Page
